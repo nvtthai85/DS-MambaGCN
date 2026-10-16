@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_t64_t13_no_motion
+model:
+  use_motion: false

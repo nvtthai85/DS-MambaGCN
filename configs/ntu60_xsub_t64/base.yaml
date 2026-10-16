@@ -1,0 +1,7 @@
+# NTU RGB+D 60 X-Sub, paper model (D = 256, N = 64, expansion 2, separate scan
+# weights) on 64-frame inputs, the input length used by CTR-GCN, InfoGCN,
+# SkateFormer and SkelMamba. About 4-5x cheaper than T = 300.
+base: ../ntu60_xsub/base.yaml
+name: ntu60_xsub_t64_full
+data:
+  T: 64

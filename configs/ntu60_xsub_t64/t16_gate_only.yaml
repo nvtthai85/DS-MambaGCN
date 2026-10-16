@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_t64_t16_gate_only
+model:
+  fusion: gate_only

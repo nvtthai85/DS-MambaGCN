@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_t64_t14_topo_phys_data
+model:
+  topology: phys+data

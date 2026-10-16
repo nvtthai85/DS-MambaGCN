@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_t64_t15_t16_parallel_add
+model:
+  fusion: add

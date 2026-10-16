@@ -24,7 +24,7 @@ TABLE_OF = {
 
 
 def table_label(name):
-    short = re.sub(r"^ntu60_xsub_(lite_)?", "", name)
+    short = re.sub(r"^ntu60_xsub_(lite_|t64_)?", "", name)
     for k, v in TABLE_OF.items():
         if short.startswith(k):
             return v
