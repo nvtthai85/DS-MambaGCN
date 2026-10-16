@@ -19,6 +19,7 @@
 #   START     0 = install and copy only, do not start the queue
 set -euo pipefail
 D=${D:-/content/drive/MyDrive/DS-MambaGCN_runs}
+cd /content       # the code folder is replaced below; never stay inside it
 export D
 [ -d "$D" ] || { echo "Drive not mounted or $D missing"; exit 1; }
 
