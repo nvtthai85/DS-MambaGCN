@@ -53,7 +53,9 @@ mkdir -p /content/data /content/logs
 
 # --- queue ----------------------------------------------------------------------
 cd /content/DS-MambaGCN
-if pgrep -f "tools/run_queue.py" >/dev/null; then echo "queue already running in this session"; exit 0; fi
+if pgrep -f "tools/run_queue.py" >/dev/null || pgrep -f "python train.py" >/dev/null; then
+  echo "a queue or a training run is still active in this session: stop it first (cell 9), then start again"; exit 0
+fi
 rm -rf /tmp/dsmamba_queue_locks
 for i in $(seq 1 "$PARALLEL"); do
   nohup python tools/run_queue.py --runs "$D/runs" --data "/content/data/$DATA_NAME" \
