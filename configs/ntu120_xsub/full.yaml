@@ -1,0 +1,7 @@
+# NTU RGB+D 120, Cross-Subject. Needs the NTU120 compact data (tools/ntu_preprocess.py on s001-s032).
+base: ../ntu60_xsub/base.yaml
+name: ntu120_xsub_full
+data:
+  name: ntu120
+  path: data/ntu120_compact
+  benchmark: xsub

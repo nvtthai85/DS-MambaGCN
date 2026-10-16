@@ -1,0 +1,7 @@
+# NTU RGB+D 120, Cross-Setup (even setup ids train, odd test).
+base: ../ntu60_xsub/base.yaml
+name: ntu120_xset_full
+data:
+  name: ntu120
+  path: data/ntu120_compact
+  benchmark: xset

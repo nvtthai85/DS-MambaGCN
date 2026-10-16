@@ -1,0 +1,5 @@
+base: base.yaml
+name: ntu60_xsub_t13_spatial_only
+model:
+  coupling: spatial_only
+  topology: phys

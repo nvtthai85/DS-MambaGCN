@@ -1,0 +1,42 @@
+# NTU RGB+D 60, Cross-Subject. Full DS-MambaGCN = Table 13 last row.
+# Every other file in this folder starts from this one and overrides a few keys,
+# so the only difference between two table rows is the switch named in the file.
+name: ntu60_xsub_full
+data:
+  name: ntu60
+  format: compact                    # tools/ntu_preprocess.py output (data.npy + meta.npz)
+  path: data/ntu_compact             # or format: npz + path: data/ntu/NTU60_CS.npz (CTR-GCN file)
+  benchmark: xsub
+  T: 300
+  augment: {enabled: true, rot_deg: 15.0, shift: 5, noise_std: 0.01}
+  # Model selection. NTU has no official validation split, so EITHER hold out
+  # part of the training set (default) OR use the last epoch. Never the test set.
+  validation: {policy: holdout, fraction: 0.05, split_seed: 0}
+  # validation: {policy: final_epoch}
+model:
+  in_channels: 3
+  dim: 256
+  depth: 4
+  d_state: 64
+  d_conv: 4
+  expand: 2            # Mamba expansion factor
+  share_bidir: false   # separate weights for the forward and backward scans
+  heads: 8
+  dropout: 0.1
+  topology: full       # phys | phys+data | phys+adapt | full
+  coupling: parallel   # parallel | serial_gcn_mamba | serial_mamba_gcn | spatial_only | temporal_only
+  fusion: csaf         # csaf | xattn_only | gate_only | add | concat
+  scan: bi             # bi | fwd
+  use_motion: true
+train:
+  epochs: 120
+  batch_size: 32
+  eval_batch_size: 64
+  lr: 1.0e-3
+  weight_decay: 5.0e-4
+  warmup_epochs: 5
+  label_smoothing: 0.1
+  amp: true
+  grad_clip: 1.0       # matches the threshold drawn in Fig. 11; add it to Table 7
+  patience: 20
+  workers: 8

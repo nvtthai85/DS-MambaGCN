@@ -1,0 +1,11 @@
+data/
+runs/
+analysis/
+__pycache__/
+*.pt
+*.pth
+*.npz
+*.npy
+.ipynb_checkpoints/
+.pytest_cache/
+wheels/

@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_t16_xattn_only
+model:
+  fusion: xattn_only

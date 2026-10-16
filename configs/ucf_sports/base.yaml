@@ -1,0 +1,39 @@
+# UCF Sports Actions with MediaPipe skeletons (Sec. 4.2.1 of the paper).
+name: ucf_sports_full
+data:
+  name: ucf_sports
+  path: data/ucf_sports/ucf_sports_mediapipe25.npz   # written by tools/ucf_preprocess.py
+  T: 150
+  splits:                                           # written by tools/make_ucf_split.py
+    train: data/ucf_sports/splits/train.txt
+    val: data/ucf_sports/splits/val.txt
+    test: data/ucf_sports/splits/test.txt
+  augment: {enabled: true, rot_deg: 15.0, shift: 5, noise_std: 0.01}
+  validation: {policy: files}
+model:
+  in_channels: 3
+  dim: 128
+  depth: 4
+  d_state: 64
+  d_conv: 4
+  expand: 2            # Mamba expansion factor
+  share_bidir: false   # separate forward / backward scan weights
+  heads: 8
+  dropout: 0.1
+  topology: full
+  coupling: parallel
+  fusion: csaf
+  scan: bi
+  use_motion: true
+train:
+  epochs: 120
+  batch_size: 16
+  eval_batch_size: 32
+  lr: 1.0e-3
+  weight_decay: 5.0e-4
+  warmup_epochs: 5
+  label_smoothing: 0.1
+  amp: true
+  grad_clip: 1.0
+  patience: 20
+  workers: 4

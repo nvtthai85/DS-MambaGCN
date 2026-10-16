@@ -1,0 +1,5 @@
+# NTU RGB+D 60, Cross-View (cameras 2 and 3 train, camera 1 test). Same model and recipe as X-Sub.
+base: ../ntu60_xsub/base.yaml
+name: ntu60_xview_full
+data:
+  benchmark: xview

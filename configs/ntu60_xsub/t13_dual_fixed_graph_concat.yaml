@@ -1,0 +1,5 @@
+base: base.yaml
+name: ntu60_xsub_t13_dual_fixed_graph_concat
+model:
+  topology: phys
+  fusion: concat

@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_lite_t14_topo_phys_adapt
+model:
+  topology: phys+adapt

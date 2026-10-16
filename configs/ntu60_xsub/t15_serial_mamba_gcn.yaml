@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_t15_serial_mamba_gcn
+model:
+  coupling: serial_mamba_gcn

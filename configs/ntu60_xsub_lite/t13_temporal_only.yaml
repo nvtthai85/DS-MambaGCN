@@ -1,0 +1,4 @@
+base: base.yaml
+name: ntu60_xsub_lite_t13_temporal_only
+model:
+  coupling: temporal_only

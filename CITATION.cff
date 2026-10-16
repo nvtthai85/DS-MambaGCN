@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "DS-MambaGCN: Dual-Stream Mamba-GCN for skeleton-based action recognition"
+repository-code: "https://github.com/nvtthai85/DS-MambaGCN"
+license: "MIT"
+authors:
+  - given-names: "Thai Thong Vo"
+    family-names: "Nguyen"
+  - given-names: "Loc Vinh"
+    family-names: "Cu"
+  - given-names: "Hai Thanh"
+    family-names: "Nguyen"
+preferred-citation:
+  type: article
+  title: "Dual-Stream Mamba-GCN Networks for Efficient Skeleton-Based Action Recognition"
+  journal: "Applied Intelligence"
+  year: 2026
+  authors:
+    - given-names: "Thai Thong Vo"
+      family-names: "Nguyen"
+    - given-names: "Loc Vinh"
+      family-names: "Cu"
+    - given-names: "Hai Thanh"
+      family-names: "Nguyen"
