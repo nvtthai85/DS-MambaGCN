@@ -1,0 +1,10 @@
+# UCF Sports, lite model: same Mamba settings as the NTU lite family
+# (N = 16, expansion 1, shared scan weights) with D = 128 and T = 64.
+base: ../ucf_sports/base.yaml
+name: ucf_sports_lite_full
+data:
+  T: 64
+model:
+  d_state: 16
+  expand: 1
+  share_bidir: true

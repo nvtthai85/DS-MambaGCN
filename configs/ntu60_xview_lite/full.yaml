@@ -1,0 +1,5 @@
+# NTU RGB+D 60 Cross-View, lite model (same settings as ntu60_xsub_lite).
+base: ../ntu60_xsub_lite/base.yaml
+name: ntu60_xview_lite_full
+data:
+  benchmark: xview

@@ -1,5 +1,5 @@
 # NTU RGB+D 60, Cross-Subject, LITE configuration measured to fit a T4 budget
-# (0.62 s/step at batch 16, ~49 h per 120-epoch run). Every row of every table must
+# (T4: 0.62 s/step at batch 16, ~49 h per run; A100: 0.18 s/step at batch 32, ~7 h per run).
 # then use this file as its base, including the full model.
 # Every other file in this folder starts from this one and overrides a few keys,
 # so the only difference between two table rows is the switch named in the file.

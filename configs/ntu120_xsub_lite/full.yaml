@@ -1,0 +1,7 @@
+# NTU RGB+D 120 Cross-Subject, lite model.
+base: ../ntu60_xsub_lite/base.yaml
+name: ntu120_xsub_lite_full
+data:
+  name: ntu120
+  path: data/ntu120_compact
+  benchmark: xsub
